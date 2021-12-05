@@ -29,7 +29,7 @@ public static boolean getStageValues() {
      boolean checkStage =  getStageValues();
      Date checkDate  = checkCreatedDate();
      List<Opportunity> lisofOpportunity = new List<Opportunity>() ;
-     List<Opportunity> getAllOpp = [SELECT Id,AccountId,Name FROM
+     List<Opportunity> getAllOpp = [SELECT Id,d,Name FROM
                                            Opportunity WHERE 
                                            AccountId IN :mapofAccount.keySet() WITH SECURITY_ENFORCED];
         if(!getAllOpp.isEmpty()){
@@ -43,6 +43,5 @@ public static boolean getStageValues() {
                 Database.insert(lisofOpportunity,false);
              }
         }
-
     }
 }
