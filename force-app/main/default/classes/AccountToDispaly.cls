@@ -1,0 +1,15 @@
+public with sharing class AccountToDispaly {
+    public AccountToDispaly() {
+
+    }
+    @AuraEnabled(cacheable =true)
+    public static List<Account>  legacyAccount(){
+        try {
+         List<Account> acc  = [SELECT Id,Name FROM Account Limit 50000];
+         system.debug('----'+acc);
+         return acc;
+        } catch (Exception e) {
+            throw new AuraHandledException(e.getMessage());
+        }
+    }
+}
