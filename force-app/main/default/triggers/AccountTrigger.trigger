@@ -34,4 +34,6 @@ trigger AccountTrigger on Account( before insert, after insert,before update, af
          */
          System.debug('Account trigger event' +Trigger.operationType + 'end');  
          System.debug('Test Debug adde');
+         System.debug('For Triger Changes');
+         
  }
