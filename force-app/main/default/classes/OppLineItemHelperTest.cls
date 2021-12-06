@@ -46,16 +46,18 @@ insert acc;
     oppLineItem.UnitPrice = 7000;
     oppLineItem.Quantity = 5;
     insert oppLineItem;
-
-    Asset getAsset = new Asset();
-    getAsset.Name ='Test Assets';
-    getAsset.accountId = acc.Id;
-    insert getAsset;
+    
+}
+@isTest 
+public static void dotestConstructor (){
+    OppLineItemHelper cc = new OppLineItemHelper ();
 }
 @isTest
     public static void  doInsertAssetTest() {
-       List<Asset>  s = [SELECT Id, Name FROM Asset WHERE Name ='Test Assets'];
-       String v1 = 'Test Assets';
-       system.assertEquals(v1, s[0].Name, v1);
+       List<OpportunityLineItem>  s = [SELECT Id, UnitPrice
+                                                     FROM OpportunityLineItem 
+                                                     WHERE UnitPrice = 7000];
+       String v1 = 'Check unit price';
+       system.assertEquals(7000, s[0].UnitPrice, v1);
     }
 }
