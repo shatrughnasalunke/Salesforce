@@ -1,0 +1,30 @@
+<template>
+    <lightning-card icon-name="Acount" aria-labelledby="Private Property Demo2">
+      <div class="slds-m-aroud_medium">
+        
+        <lightning-input value={firstName} placeholder ='Enter First Name' onchange={handleChange1}>
+        </lightning-input> 
+
+        <lightning-input value={lastName} placeholder="Enter Last Name" onchange={handleChnage2}> 
+         </lightning-input>
+
+        <lightning-input lvalue={age}  placeholder="Enetr Age Here" onchange={handleChange3}>
+        </lightning-input>
+        
+        <lightning-input value={address} placeholder ="Enter Address " onchange={handleChange4}>
+        </lightning-input>
+
+        <lightning-input value={pincCode}  placeholder="Enetr Postal Code" onchange={handleChange5}>
+        </lightning-input>
+    </div>
+    <div>
+            My First Name is  : {firstName} <br/>
+            My Last Name is   : {lastName}<br/>
+            My Age is         : {age} <br/>
+            My Address is     : {address}<br/>
+            My Postal Code    : {pincCode}<br/>
+    </div>
+
+    </lightning-card>
+
+</template>

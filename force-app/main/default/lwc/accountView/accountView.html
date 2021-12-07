@@ -1,0 +1,15 @@
+<template>
+        <h1>List View Of Contact </h1>
+        <lightning-card title="Contact list view by using wired to function" icon-name="Contact">
+                <div class="slds-m-around_medium">
+                       <template if:true={contacts}>
+                            <template for:each={accounts} for:item="cc">
+                                <p key={cc.id}> {cc.Name} </p>
+                        </template>
+</template>
+<template if:true={error}>
+                        {error}
+                        </template>
+</div>
+</lightning-card>
+</template>

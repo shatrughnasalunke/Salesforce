@@ -1,0 +1,15 @@
+<template>
+<h1>Private Property Demo1 </h1>
+ <lightning-card icon-name="Account" aria-label="Private Property Demo1">
+   <div class= "slds-m-around_medium"> 
+         <lightning-input value={firstName} placeholder="Enter First Name" onchange={handleChange}>
+         </lightning-input>
+
+         <lightning-input value={lastName} placeholder="Enter Last Name" onchange={handleChnage1}>
+        </lightning-input>
+   </div>
+   <div>
+            <p>My Name is : {firstName} {lastName} </p>
+    </div>
+</lightning-card>
+</template>

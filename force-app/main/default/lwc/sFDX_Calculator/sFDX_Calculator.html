@@ -1,0 +1,41 @@
+<!--
+    Compnay Name        : xxxxx 
+    Name                : Calculator Web Component
+    Description         : 
+    Created By          : Shatrughna Salunke
+    Last Modified By    : Shatrughna Salunke
+    Cretaed Date        : 10,Jan 2021
+    Last Modifiied Date : 10,Jan 2021
+    User Story No       :   
+-->
+<template>
+    <div class="slds-m-around_small"> 
+                <lightning-card title="Calculator" icon-name="custom:custom30">
+
+                    <lightning-input name="number1" value={number1} placeholder="Enter Number Here" onchange={handleChange}>
+                    </lightning-input> 
+                        
+                    <lightning-input name="number2" value={number2} placeholder="Enter Number Here" onchange={handleChange}>
+                    </lightning-input> 
+                </lightning-card>
+    </div>
+        &nbsp;
+
+        <lightning-button name="Addition" label="Addition" onclick={doSum}>
+
+        </lightning-button>
+        &nbsp;
+        <lightning-button name="Substraction" label="Substraction" onclick={doSub}>
+
+        </lightning-button>
+
+        &nbsp;
+        <lightning-button name="Multiplication" label="Multiplication" onclick={doMul}>
+
+        </lightning-button>
+        &nbsp;
+        <lightning-button name="Division" label="Division" onclick={doDiv}>
+
+        </lightning-button>
+            
+</template>

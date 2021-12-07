@@ -1,0 +1,47 @@
+<template>
+
+<div class="slds-box slds-theme_default">
+
+<lightning-record-edit-form object-api-name="Account" onsuccess={handleSuccess} record-id={recordId}>
+     
+
+    <div class="slds-grid slds-wrap">
+       
+        <div class="slds-col slds-size_5-of-2">
+          
+            <lightning-input-field field-name="Name">   
+
+            </lightning-input-field>
+
+        </div>
+        
+        <div class="slds-col slds-size_5-of-2">
+            <lightning-input-field field-name="Website">   
+            </lightning-input-field>
+        </div>
+
+        <div class="slds-col slds-size_5-of-2">
+            <lightning-input-field field-name="Phone">   </lightning-input-field>
+
+        </div>
+
+        <div class="slds-col slds-size_5-of-2">
+            <lightning-input-field field-name="AccountNumber">  </lightning-input-field>
+           
+        </div>
+
+        <div class="slds-col slds-size_5-of-2">
+            <lightning-input-field field-name="Type">  </lightning-input-field>
+           
+        </div>
+
+    </div>
+
+    <lightning-button class="slds-m-top_small" type="submit" label="Save">
+
+    </lightning-button>
+
+</lightning-record-edit-form>
+
+</div>
+</template>

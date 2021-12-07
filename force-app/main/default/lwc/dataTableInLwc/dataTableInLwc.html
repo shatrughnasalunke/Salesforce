@@ -1,0 +1,25 @@
+<!-- myComponent.html 
+Compnay            : xxxxx
+Name               : OpportunityController
+Description        : Delete opportunity by using lightning web component
+Created By Name    : Shatrughna Salunke
+Careated Date      : 7,Jan 2021 
+Last Modified  By  : Shatrughna Salunke
+Last Modified Date : 7,Jan,2021
+User Story Number  :  
+-->
+<template>  
+    <lightning-card title="Opportunity">  
+      <lightning-button slot="actions" label="Delete" onclick={deleteRecord}></lightning-button>  
+      <lightning-button slot="actions" label="Insert" onclick={deleteRecord}></lightning-button>  
+      <div class="slds-box">  
+       
+        <lightning-datatable  
+              data={oppList.data} columns={cols} key-field="Id">  
+        </lightning-datatable>  
+      
+       </div> 
+       
+       
+    </lightning-card>  
+  </template>
