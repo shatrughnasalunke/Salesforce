@@ -33,10 +33,8 @@ public with sharing class ECS_UK_CMA_Reconcillation {
                                                      :contentMap.keySet()
                                                      AND Title like'%CMA_Extract_%'];
             Integer count=0;
-            for (ECS_UK_Content_Version__mdt meta_data : getContetnTitle)
-            { 
-                for (ContentVersion get_content_data : cma_content_data)
-                {   
+            for (ECS_UK_Content_Version__mdt meta_data : getContetnTitle){ 
+                for (ContentVersion get_content_data : cma_content_data){   
                     if(meta_data.title__c.contains(get_content_data.title))
                     {
                         //if(meta_data.title__c==get_content_data.title)

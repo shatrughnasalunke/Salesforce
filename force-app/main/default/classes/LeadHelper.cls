@@ -1,18 +1,27 @@
-public class LeadHelper {
+public with sharing class LeadHelper {
     public static void getCloneLead(Map<Id, Lead> cloneLead) {
-        
+      
         boolean avoidRecursion = false;
-        List<Lead> accLead = [SELECT ID,FirstName, lastName, Company,
-							  LeadSource From Lead WHERE ID IN : cloneLead.keySet()];
-        system.debug('accLead-->'+accLead);
-        List<Lead> duplicateLead = accLead.deepClone();
-        System.debug('duplicateLead--->'+duplicateLead);
-        if (!duplicateLead.isEmpty()) {
+        boolean passPartialOperation = false;
+        boolean listnotEmpty ;
+        boolean  checkAccess;
+
+        List<Lead> v1 = [SELECT ID,FirstName, 
+                                lastName, Company,
+							    LeadSource From 
+                                Lead WHERE ID IN : cloneLead.keySet() WITH SECURITY_ENFORCED];
+        
+        List<Lead> duplicateLead = v1.deepClone();
+        checkAccess = schema.sObjectType.Lead.fields.firstName.isCreateable();
+        listnotEmpty = (!duplicateLead.isEmpty());
+        
+        if (listnotEmpty) {
             if(avoidRecursion==false) {
                 avoidRecursion= true;
-                Database.insert(duplicateLead, true);
+                if (Schema.sObjectType.Lead.fields.firstName.isCreateable()) {
+                    Database.insert(duplicateLead, passPartialOperation);
+                }
             }
-          
         }
     }
 }

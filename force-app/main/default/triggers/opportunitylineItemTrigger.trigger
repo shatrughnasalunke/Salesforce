@@ -14,5 +14,3 @@ Trigger opportunitylineItemTrigger on opportunityLineItem (
                }
            }             
 }
-
-
