@@ -1,5 +1,6 @@
 public with sharing class TestAccountTriggerHelper {
-    public TestAccountTriggerHelper() {
+
+public TestAccountTriggerHelper() {
         System.debug('Constructo executed');
     }
 public static boolean getStageValues() {
@@ -54,6 +55,6 @@ public static boolean getStageValues() {
          }
          if (!listOfContact.isEmpty()) {
             insert listOfContact;
-         }
-  }
+        }
+   }
 }
