@@ -1,0 +1,28 @@
+<template>
+    <lightning-card title="Create Customer Record" icon-name="standard:account">
+        <div style="margin-left: 6%" if:true={error}>
+            <lightning-badge label={error} style="color: red;"></lightning-badge>
+        </div>
+        <template if:true={accRecord}>
+            <div class="slds-m-around--xx-large">
+                <div class="container-fluid">
+                    <div class="form-group">
+                        <lightning-input label="Enter Account Name" name="accName" required="required" type="text" value={accRecord.Name} onchange={handleNameChange}></lightning-input>
+                    </div>
+                    <div class="form-group">
+                        <lightning-input label="Enter Phone Number" name="accPhone" type="number" value={accRecord.Phone} onchange={handlePhoneChange}></lightning-input>
+                    </div>
+                    <div class="form-group">
+                        <lightning-input label="Enter Account Type" name="accEmail" required="required" type="text" value={accRecord.Type} onchange={handleTypeChange}></lightning-input>
+                    </div>
+                    <div class="form-group">
+                        <lightning-input label="Enter Industry" name="accEmail" type="text" value={accRecord.Industry} onchange={handleIndustryChange}></lightning-input>
+                    </div>
+                </div>
+                <br/>
+                <lightning-button label="Submit" onclick={handleSave} variant="brand"></lightning-button>
+            </div>
+    
+        </template>
+    </lightning-card>
+</template>

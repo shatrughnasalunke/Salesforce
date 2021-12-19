@@ -1,5 +1,4 @@
 public inherited sharing class DisplayContactOnAccountSelController {
-    
     public list<AccountContactWrapper> lstAccountContactWrapper { get; set; }
     public list<AccountContactWrapper> lstSelectedAccountContactWrapper { get; set; }
     public list<account> selectedAccounts{get;set;}   
@@ -25,14 +24,11 @@ public inherited sharing class DisplayContactOnAccountSelController {
         }
     }
     public with sharing class AccountContactWrapper {
-        
         public Account acc {get;set;}
         public boolean isSelected {get;set;}
-        
         public AccountContactWrapper(account a) {
             acc = a;
             isselected=false;
         }
     }
-    
 }
