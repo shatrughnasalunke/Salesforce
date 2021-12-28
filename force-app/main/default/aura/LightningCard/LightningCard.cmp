@@ -1,0 +1,15 @@
+<aura:component>
+    <lightning:card iconName="standard:account" footer="Accenture Private Limited " title="Accenture">
+    <aura:set attribute="actions">
+        <lightning:button iconName="utility:add" label="follow"/>
+        <lightning:buttonGroup>
+            <lightning:button label="Save"/>
+            <lightning:button label="Cancel"/>
+            <lightning:button label="Delete"/>
+        </lightning:buttonGroup>
+        </aura:set>
+        <p class="slds-p-horizontal_small">
+            Accenture Private Limited, Pune
+        </p>
+    </lightning:card>
+</aura:component>

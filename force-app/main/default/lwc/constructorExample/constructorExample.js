@@ -1,7 +1,5 @@
 import { LightningElement } from 'lwc';
-
 export default class ConstructorExample extends LightningElement {
- 
    constructor(){
         alert('Constructor Executed');
         super();

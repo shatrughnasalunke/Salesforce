@@ -1,0 +1,33 @@
+<aura:component>
+        <div class="slds-box">
+            <lightning:button label="Accounts" variant="brand" iconName="Accounts"/>
+            <lightning:button label="Contacts" variant="neutral" iconName="contact" />
+            <lightning:button label="Opportunities" variant="destructive" iconName="opportunities"/>
+            <lightning:button label="Cases" />
+            <lightning:button label="Order" />
+            <lightning:button label="Lead" />
+            <br/><br/><br/>
+        </div>
+
+        <br/><br/><br/>
+
+        <lightning:buttonGroup>
+            <lightning:button label="Accounts" variant="brand" iconName="Accounts"/>
+            <lightning:button label="Contacts" variant="neutral" iconName="contact" />
+            <lightning:button label="Opportunities" variant="destructive" iconName="opportunities"/>
+            <lightning:button label="Cases" />
+            <lightning:button label="Order" />
+            <lightning:button label="Lead" />   
+        </lightning:buttonGroup>
+
+    <br/><br/><br/>
+    <h1>lightning button menu</h1>
+
+        <lightning:buttonMenu name="Menu Items" label="Menu Items">
+                <lightning:menuItem label="Save"/>
+                <lightning:menuItem label="Edit"/>
+                <lightning:menuItem label="View"/>
+                <lightning:menuItem label="Delete"/>
+        </lightning:buttonMenu>
+
+</aura:component>
