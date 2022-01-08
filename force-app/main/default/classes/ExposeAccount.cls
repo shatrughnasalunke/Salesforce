@@ -5,11 +5,12 @@ global with sharing class ExposeAccount {
     public ExposeAccount() {
         system.debug('Get Account Details');
     }
-   /*@HttpGet
+   
+    /*@HttpGet
     global static List<Account> getAccounts() {
         return [SELECT Id,Name FROM Account] ;
     } */
-    
+   
     @HttpGet
     global static List<Account> getAccount() {
 
@@ -18,7 +19,7 @@ global with sharing class ExposeAccount {
         String industryType  = RestContext.request.params.get('industry');
         return  [SELECT ID, Name, (SELECT Id, FirstName,Account.Name, LastName, Email FROM Contacts) FROM Account WHERE Type =: accountType AND industry =: industryType];
     }
-    
+   
     @HttpPost 
     global static void doInsert(){
     RestRequest rest = RestContext.request;
@@ -28,7 +29,7 @@ global with sharing class ExposeAccount {
     String v1 = name; 
     String v2 = branchType;
     Account acc;
-    
+  
     if (!(String.isBlank(v1) && String.isBlank(v2))) {
                 acc = new Account() ;
                 acc.Name=v1;
@@ -36,12 +37,11 @@ global with sharing class ExposeAccount {
                 acc.Industry = 'Chemiclas';
                // acc.Type='Prospect';
                 insertAccountList.add(acc);
-     }
-     
+     }   
+  
      if(insertAccountList.size() > 0) {
          insert insertAccountList;
      }
-
-
+  
     } 
 }
