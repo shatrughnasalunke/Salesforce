@@ -34,3 +34,17 @@ global class BatchBankDetailsCustomerAPI Implements Database.Batchable<sObject>,
        System.debug('Job Id---->'+JobId);
     }
 }
+
+
+HttpRequest request = new HttpRequest();
+request.setMethod('GET');
+request.setHeader('Content-Type', 'application/json');
+request.setHeader('accept','application/json');
+request.setMethod('GET');
+request.setEndpoint('callout:Consume_Task/services/apexrest/v1/Tasks?accountNumber=CC634267&AnnualRevenue=200000&industry=banking');
+Http https = new Http();
+HttpResponse response  = https.send(request);
+System.debug('Response--->'+response.getBody());
+if (response.getStatusCode() == 200){
+    system.debug('Connection has been done successfully ');
+}
